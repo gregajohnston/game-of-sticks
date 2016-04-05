@@ -29,8 +29,6 @@ class PrintStatements:
             print("The game start with {} sticks.".format(self.selection))
 
     def print_welcome_players(self):
-        if self.selection == 0:
             print("Welcome to the Game of Sticks!")
             print("The object is to make your opponent pick up the last stick.")
-        else:
             print("You must pick up 1 stick every turn, but may grab up to {} sticks.\n".format(self.selection))
