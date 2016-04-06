@@ -74,4 +74,3 @@ class AiGameLogic:
             for index, value in enumerate(drawn_list):
                 if value > 0:
                     choice_list[index].append(value)
-        print(choice_list)
