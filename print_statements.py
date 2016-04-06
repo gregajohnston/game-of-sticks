@@ -26,9 +26,9 @@ class PrintStatements:
         if self.selection == 0:
             print("How many sticks are on the table initially? Select from 10 to 100:")
         else:
-            print("The game start with {} sticks.".format(self.selection))
+            print("\nThe game start with {} sticks.".format(self.selection))
 
     def print_welcome_players(self):
-            print("Welcome to the Game of Sticks!")
+            print("\n\nWelcome to the Game of Sticks!")
             print("The object is to make your opponent pick up the last stick.")
             print("You must pick up 1 stick every turn, but may grab up to {} sticks.\n".format(self.selection))
