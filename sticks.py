@@ -1,6 +1,7 @@
 from print_statements import PrintStatements
 from human_game_logic import HumanGameLogic
-from ai_game_logic import AiGameLogic
+from computer_game_logic import ComputerGameLogic
+from hard_computer_game_logic import HardComputerGameLogic
 
 starting_sticks = 0
 max_take = 3
@@ -31,9 +32,9 @@ def select_game_mode(number, sticks, max_take):
     if number == 1:
         HumanGameLogic(sticks, max_take).multi_player_game()
     elif number == 2:
-        AiGameLogic(sticks, max_take).computer_game('easy')
+        ComputerGameLogic(sticks, max_take).computer_game('easy')
     elif number == 3:
-        ComputerGameLogic(sticks, max_take).computer_game('hard')
+        HardComputerGameLogic(sticks, max_take).computer_game('hard')
     else:
         raise ValueError("Needed an integer from 1 to 3.")
 

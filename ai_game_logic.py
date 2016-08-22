@@ -67,6 +67,7 @@ class AiGameLogic:
         if current_player == 'COMPUTER':
             for index, value in enumerate(drawn_list):
                 if value > 0:
+                    print(choice_list)
                     choice_list[index].remove(value)
         current_player = [value for value in ['USER', 'COMPUTER'] if value != current_player][0]
         print("{} wins!".format(current_player))
