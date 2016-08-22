@@ -6,6 +6,7 @@ from hard_computer_game_logic import HardComputerGameLogic
 starting_sticks = 0
 max_take = 3
 
+
 def create_single_or_multi_player_game():
     player_number = 0
     PrintStatements().print_options()
@@ -18,6 +19,7 @@ def create_single_or_multi_player_game():
             print("Invalid selection. Must be an integer.")
     return player_number
 
+
 def set_starting_sticks(starting_sticks):
     PrintStatements().print_set_sticks()
     while starting_sticks not in range(10, 101):
@@ -27,6 +29,7 @@ def set_starting_sticks(starting_sticks):
             print("Invalid selection. Must be an integer.")
     PrintStatements(starting_sticks).print_set_sticks()
     return starting_sticks
+
 
 def select_game_mode(number, sticks, max_take):
     if number == 1:

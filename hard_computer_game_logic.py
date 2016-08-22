@@ -1,6 +1,5 @@
 class HardComputerGameLogic:
 
-
     def __init__(self, stick_count=20, max_amount_removable=3):
         self.stick_count = stick_count
         self.max_amount_removable = max_amount_removable
@@ -8,14 +7,20 @@ class HardComputerGameLogic:
     def hard_computer_game(self):
         current_player = 'USER'
         while self.stick_count > 0:
-            current_player = [value for value in ['USER', 'COMPUTER'] if value != current_player][0]
-            print("Stick count = {}. {}\'s turn to choose.".format(self.stick_count, current_player))
+            current_player = [value for value in ['USER', 'COMPUTER']
+                              if value != current_player][0]
+            print("Stick count = {}. {}\'s turn to choose.".format(
+                  self.stick_count, current_player))
             if current_player == 'USER':
-                self.stick_count = self.remove_sticks_human(self.stick_count, self.max_amount_removable)
+                self.stick_count = self.remove_sticks_human(
+                    self.stick_count, self.max_amount_removable)
             else:
-                self.stick_count = self.remove_sticks_computer(self.stick_count, self.max_amount_removable)
-        print("{} drew the last stick and lost the game!".format(current_player))
-        current_player = [value for value in ['USER', 'COMPUTER'] if value != current_player][0]
+                self.stick_count = self.remove_sticks_computer(
+                    self.stick_count, self.max_amount_removable)
+        print("{} drew the last stick " +
+              "and lost the game!".format(current_player))
+        current_player = [value for value in ['USER', 'COMPUTER']
+                          if value != current_player][0]
         print("{} wins!".format(current_player))
 
     def remove_sticks_computer(self, number_left, max_remove):
@@ -26,7 +31,8 @@ class HardComputerGameLogic:
             print("... removing {} sticks... \n".format(number_left-1))
             return 1
         elif number_left % (max_remove + 1) != 0:
-            print("... removing {} sticks... \n".format(number_left % (max_remove + 1)))
+            print("... removing {} sticks... " +
+                  "\n".format(number_left % (max_remove + 1)))
             return number_left - number_left % (max_remove + 1)
         else:
             print("... removing 1 stick... \n")

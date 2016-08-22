@@ -7,11 +7,17 @@ class HumanGameLogic:
     def multi_player_game(self):
         current_player = 2
         while self.stick_count > 0:
-            current_player = [value for value in [1, 2] if value != current_player][0]
-            print("Stick count = {}. Player {}\'s turn to choose.".format(self.stick_count, current_player))
-            self.stick_count = self.remove_sticks(self.stick_count, self.max_amount_removable)
-        print("Player {} drew the last stick and lost the game!".format(current_player))
-        current_player = [value for value in [1, 2] if value != current_player][0]
+            current_player = [value for value in [1, 2]
+                              if value != current_player][0]
+            print("|" * self.stick_count)
+            print("Stick count = {}. Player {}\'s turn to choose.".format(
+                    self.stick_count, current_player))
+            self.stick_count = self.remove_sticks(self.stick_count,
+                                                  self.max_amount_removable)
+        print("Player {} drew the last " +
+              "stick and lost the game!".format(current_player))
+        current_player = [value for value in [1, 2]
+                          if value != current_player][0]
         print("Player {} wins!".format(current_player))
 
     def remove_sticks(self, number_left, max_remove):
